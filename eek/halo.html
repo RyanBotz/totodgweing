@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>todo</title>
+</head>
+<body>
+
+    <div class="kartu">
+        <h3>RyanBotz</h3>
+        <p>Mau Bikin Apa?</p>
+    </div>
+     
+    <div class="container">
+        <form action="#">
+            <input type="text" id="new_text">
+            <button class="add" onclick="add()">Add</button>
+    
+            <ul id="todo">            
+            </ul>
+        </form>
+    </div>
+
+    
+    <script>
+        const todo = document.getElementById('todo')
+
+        // console.log("tes asu")
+        function add() {
+            let newText = document.getElementById('new_text')
+            let Url = '<input type="text" class="form-control form-control-user mb-3" value="'+newText.value+'">'
+            // console.log(newText.value)
+
+            // var li = document.createElement('li')
+            // var txt = document.createTextNode(newText.value)
+
+            // li.appendChild(txt)
+            // todo.appendChild(li)
+            let newTodo = Url
+
+            todo.insertAdjacentHTML('afterbegin', newTodo)
+
+            newText.value = ""
+
+        }
+
+        function toggle(el) {
+            el.classList.toggle('done')
+        }
+        function remove(el) {
+            el.parentElement.remove()
+            alert("yakin untuk di hapus")
+        }
+    </script>
+
+</body>
+</html>
